@@ -1,22 +1,37 @@
 import React from 'react';
 import './App.css';
-const img_arr = {
-  T:require('./img/T.svg'),
-  R:require('./img/R.svg'),
-  P:require('./img/P.svg'),
-  D:require('./img/D.svg'),
-  I  : require('./img/I.svg'),
-  IL : require('./img/IL.svg'),
-  ILR: require('./img/ILR.svg'),
-  ILT: require('./img/ILT.svg'),
-  IR : require('./img/IR.svg'),
-  IT : require('./img/IT.svg'),
-  L  : require('./img/L.svg'),
-  LR : require('./img/LR.svg'),
-  LT : require('./img/LT.svg'),
-  Q : require('./img/Q.svg'),
-  A : require('./img/A.svg'),
-  AQ : require('./img/AQ.svg')
+const img_arr_red = {
+  T:require('./img/red/T.svg'),
+  R:require('./img/red/R.svg'),
+  P:require('./img/red/P.svg'),
+  D:require('./img/red/D.svg'),
+  I  : require('./img/red/I.svg'),
+  L  : require('./img/red/L.svg'),
+  Q : require('./img/red/Q.svg'),
+  A : require('./img/red/A.svg'),
+  AQ : require('./img/red/AQ.svg')
+}
+const img_arr_green = {
+  T:require('./img/green/T.svg'),
+  R:require('./img/green/R.svg'),
+  P:require('./img/green/P.svg'),
+  D:require('./img/green/D.svg'),
+  I  : require('./img/green/I.svg'),
+  L  : require('./img/green/L.svg'),
+  Q : require('./img/green/Q.svg'),
+  A : require('./img/green/A.svg'),
+  AQ : require('./img/green/AQ.svg')
+}
+const img_arr_yellow = {
+  T:require('./img/yellow/T.svg'),
+  R:require('./img/yellow/R.svg'),
+  P:require('./img/yellow/P.svg'),
+  D:require('./img/yellow/D.svg'),
+  I  : require('./img/yellow/I.svg'),
+  L  : require('./img/yellow/L.svg'),
+  Q : require('./img/yellow/Q.svg'),
+  A : require('./img/yellow/A.svg'),
+  AQ : require('./img/yellow/AQ.svg')
 }
 class Trafficflash extends React.Component {
   constructor(props) {
@@ -29,6 +44,24 @@ class Trafficflash extends React.Component {
         green:[]
       },
       newarr: [],
+      wayarr_red: {
+        N: {arrows:[],people:[]},
+        S: {arrows:[],people:[]},
+        W: {arrows:[],people:[]},
+        E: {arrows:[],people:[]},
+      },
+      wayarr_green: {
+        N: {arrows:[],people:[]},
+        S: {arrows:[],people:[]},
+        W: {arrows:['R','I'],people:[]},
+        E: {arrows:['R','I'],people:[]},
+      },
+      wayarr_yellow: {
+        N: {arrows:[],people:[]},
+        S: {arrows:[],people:[]},
+        W: {arrows:[],people:[]},
+        E: {arrows:[],people:[]},
+      },
       wayarr: {
         N: {arrows:['I','L','R','T'],people:['P']},
         S: {arrows:['I','L','R','T'],people:['P']},
@@ -56,14 +89,14 @@ class Trafficflash extends React.Component {
    
   }
   render() {
-    const { colorstation,wayarr,multiway } = this.state
+    const { colorstation,wayarr_red,wayarr_green,wayarr_yellow,wayarr,multiway } = this.state
     const aaa='R'
     if(multiway){
       return (
         <div>
           {colorstation.toString()}
-          <div style={{width:'300px',height:'300px',border:'2px solid #fff',position:'fixed',top:'26%',left:'40%',overflow:'hidden'}}>
-            <img  className={'mu-arrows-n'} src={img_arr[wayarr.N.arrows.join('')]}/>
+          <div style={{width:'300px',height:'300px',border:'2px solid #fff',position:'fixed',top:'26%',left:'20%',overflow:'hidden'}}>
+            {/* <img  className={'mu-arrows-n'} src={img_arr[wayarr.N.arrows.join('')]}/>
             <img  className={'mu-arrows-s'} src={img_arr[wayarr.S.arrows.join('')]}/>
             <img  className={'mu-arrows-e'} src={img_arr[wayarr.E.arrows.join('')]}/>
             <img  className={'mu-arrows-w'} src={img_arr[wayarr.W.arrows.join('')]}/>
@@ -78,7 +111,7 @@ class Trafficflash extends React.Component {
             <img  className={'mu-people-ne-p'} src={img_arr[wayarr.NE.people.join('')]}/>
             <img  className={'mu-people-se-p'} src={img_arr[wayarr.SE.people.join('')]}/>
             <img  className={'mu-people-sw-p'} src={img_arr[wayarr.SW.people.join('')]}/>
-            <img  className={'mu-people-nw-p'} src={img_arr[wayarr.NW.people.join('')]}/>
+            <img  className={'mu-people-nw-p'} src={img_arr[wayarr.NW.people.join('')]}/> */}
           </div>
           
         </div>
@@ -87,31 +120,83 @@ class Trafficflash extends React.Component {
       return (
         <div>
           {colorstation.toString()}
-          <div style={{width:'300px',height:'300px',border:'2px solid #fff',position:'fixed',top:'26%',left:'40%',overflow:'hidden'}}>
-          <img className={`${wayarr.N.arrows.indexOf('I') > -1 ? 'arrows-n arrows-n-I' : 'arrows-n arrows-n-I  hide'}`}  src={img_arr.I}/>
-          <img  className={`${wayarr.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr.L}/>
-          <img  className={`${wayarr.N.arrows.indexOf('R') > -1 ? 'arrows-n arrows-n-R' : 'arrows-n arrows-n-R  hide'}`} src={img_arr.R}/>
-          <img  className={`${wayarr.N.arrows.indexOf('T') > -1 ? 'arrows-n arrows-n-T' : 'arrows-n arrows-n-T  hide'}`} src={img_arr.T}/> 
-           {/*  <img  className={'arrows-n'} src={img_arr[wayarr.N.arrows.join('')]}/> */}
-          <img className={`${wayarr.S.arrows.indexOf('I') > -1 ? 'arrows-s arrows-s-I' : 'arrows-s arrows-s-I  hide'}`}  src={img_arr.I}/>
-          <img  className={`${wayarr.S.arrows.indexOf('L') > -1 ? 'arrows-s arrows-s-L' : 'arrows-s arrows-s-L  hide'}`} src={img_arr.L}/>
-          <img  className={`${wayarr.S.arrows.indexOf('R') > -1 ? 'arrows-s arrows-s-R' : 'arrows-s arrows-s-R  hide'}`} src={img_arr.R}/>
-          <img  className={`${wayarr.S.arrows.indexOf('T') > -1 ? 'arrows-s arrows-s-T' : 'arrows-s arrows-s-T  hide'}`} src={img_arr.T}/> 
-            {/* <img  className={'arrows-s'} src={img_arr[wayarr.S.arrows.join('')]}/> */}
-          <img className={`${wayarr.E.arrows.indexOf('I') > -1 ? 'arrows-e arrows-e-I' : 'arrows-e arrows-e-I  hide'}`}  src={img_arr.I}/>
-          <img  className={`${wayarr.E.arrows.indexOf('L') > -1 ? 'arrows-e arrows-e-L' : 'arrows-e arrows-e-L  hide'}`} src={img_arr.L}/>
-          <img  className={`${wayarr.E.arrows.indexOf('R') > -1 ? 'arrows-e arrows-e-R' : 'arrows-e arrows-e-R  hide'}`} src={img_arr.R}/>
-          <img  className={`${wayarr.E.arrows.indexOf('T') > -1 ? 'arrows-e arrows-e-T' : 'arrows-e arrows-e-T  hide'}`} src={img_arr.T}/> 
-            {/* <img  className={'arrows-e'} src={img_arr[wayarr.E.arrows.join('')]}/> */}
-          <img className={`${wayarr.W.arrows.indexOf('I') > -1 ? 'arrows-w arrows-w-I' : 'arrows-w arrows-w-I  hide'}`}  src={img_arr.I}/>
-          <img  className={`${wayarr.W.arrows.indexOf('L') > -1 ? 'arrows-w arrows-w-L' : 'arrows-w arrows-w-L  hide'}`} src={img_arr.L}/>
-          <img  className={`${wayarr.W.arrows.indexOf('R') > -1 ? 'arrows-w arrows-w-R' : 'arrows-w arrows-w-R  hide'}`} src={img_arr.R}/>
-          <img  className={`${wayarr.W.arrows.indexOf('T') > -1 ? 'arrows-w arrows-w-T' : 'arrows-w arrows-w-T  hide'}`} src={img_arr.T}/> 
-            {/* <img  className={'arrows-w'} src={img_arr[wayarr.W.arrows.join('')]}/> */}
-            <img  className={'people-n-p'} src={img_arr[wayarr.N.people.join('')]}/>
-            <img  className={'people-s-p'} src={img_arr[wayarr.S.people.join('')]}/>
-            <img  className={'people-w-p'} src={img_arr[wayarr.W.people.join('')]}/>
-            <img  className={'people-e-p'} src={img_arr[wayarr.E.people.join('')]}/>
+          <div style={{width:'300px',height:'300px',border:'2px solid #fff',position:'fixed',top:'26%',left:'20%',overflow:'hidden'}}>
+          <img className={`${wayarr_red.N.arrows.indexOf('I') > -1 ? 'arrows-n arrows-n-I' : 'arrows-n arrows-n-I  hide'}`}  src={img_arr_red.I}/>
+          <img  className={`${wayarr_red.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr_red.L}/>
+          <img  className={`${wayarr_red.N.arrows.indexOf('R') > -1 ? 'arrows-n arrows-n-R' : 'arrows-n arrows-n-R  hide'}`} src={img_arr_red.R}/>
+          <img  className={`${wayarr_red.N.arrows.indexOf('T') > -1 ? 'arrows-n arrows-n-T' : 'arrows-n arrows-n-T  hide'}`} src={img_arr_red.T}/> 
+           {/*  <img  className={'arrows-n'} src={img_arr_red[wayarr.N.arrows.join('')]}/> */}
+          <img className={`${wayarr_red.S.arrows.indexOf('I') > -1 ? 'arrows-s arrows-s-I' : 'arrows-s arrows-s-I  hide'}`}  src={img_arr_red.I}/>
+          <img  className={`${wayarr_red.S.arrows.indexOf('L') > -1 ? 'arrows-s arrows-s-L' : 'arrows-s arrows-s-L  hide'}`} src={img_arr_red.L}/>
+          <img  className={`${wayarr_red.S.arrows.indexOf('R') > -1 ? 'arrows-s arrows-s-R' : 'arrows-s arrows-s-R  hide'}`} src={img_arr_red.R}/>
+          <img  className={`${wayarr_red.S.arrows.indexOf('T') > -1 ? 'arrows-s arrows-s-T' : 'arrows-s arrows-s-T  hide'}`} src={img_arr_red.T}/> 
+            {/* <img  className={'arrows-s'} src={img_arr_red[wayarr.S.arrows.join('')]}/> */}
+          <img className={`${wayarr_red.E.arrows.indexOf('I') > -1 ? 'arrows-e arrows-e-I' : 'arrows-e arrows-e-I  hide'}`}  src={img_arr_red.I}/>
+          <img  className={`${wayarr_red.E.arrows.indexOf('L') > -1 ? 'arrows-e arrows-e-L' : 'arrows-e arrows-e-L  hide'}`} src={img_arr_red.L}/>
+          <img  className={`${wayarr_red.E.arrows.indexOf('R') > -1 ? 'arrows-e arrows-e-R' : 'arrows-e arrows-e-R  hide'}`} src={img_arr_red.R}/>
+          <img  className={`${wayarr_red.E.arrows.indexOf('T') > -1 ? 'arrows-e arrows-e-T' : 'arrows-e arrows-e-T  hide'}`} src={img_arr_red.T}/> 
+            {/* <img  className={'arrows-e'} src={img_arr_red[wayarr.E.arrows.join('')]}/> */}
+          <img className={`${wayarr_red.W.arrows.indexOf('I') > -1 ? 'arrows-w arrows-w-I' : 'arrows-w arrows-w-I  hide'}`}  src={img_arr_red.I}/>
+          <img  className={`${wayarr_red.W.arrows.indexOf('L') > -1 ? 'arrows-w arrows-w-L' : 'arrows-w arrows-w-L  hide'}`} src={img_arr_red.L}/>
+          <img  className={`${wayarr_red.W.arrows.indexOf('R') > -1 ? 'arrows-w arrows-w-R' : 'arrows-w arrows-w-R  hide'}`} src={img_arr_red.R}/>
+          <img  className={`${wayarr_red.W.arrows.indexOf('T') > -1 ? 'arrows-w arrows-w-T' : 'arrows-w arrows-w-T  hide'}`} src={img_arr_red.T}/> 
+            {/* <img  className={'arrows-w'} src={img_arr_red[wayarr.W.arrows.join('')]}/> */}
+            <img  className={'people-n-p'} src={img_arr_red[wayarr_red.N.people.join('')]}/>
+            <img  className={'people-s-p'} src={img_arr_red[wayarr_red.S.people.join('')]}/>
+            <img  className={'people-w-p'} src={img_arr_red[wayarr_red.W.people.join('')]}/>
+            <img  className={'people-e-p'} src={img_arr_red[wayarr_red.E.people.join('')]}/>
+
+
+          <img className={`${wayarr_green.N.arrows.indexOf('I') > -1 ? 'arrows-n arrows-n-I' : 'arrows-n arrows-n-I  hide'}`}  src={img_arr_green.I}/>
+          <img  className={`${wayarr_green.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr_green.L}/>
+          <img  className={`${wayarr_green.N.arrows.indexOf('R') > -1 ? 'arrows-n arrows-n-R' : 'arrows-n arrows-n-R  hide'}`} src={img_arr_green.R}/>
+          <img  className={`${wayarr_green.N.arrows.indexOf('T') > -1 ? 'arrows-n arrows-n-T' : 'arrows-n arrows-n-T  hide'}`} src={img_arr_green.T}/> 
+           {/*  <img  className={'arrows-n'} src={img_arr_green[wayarr.N.arrows.join('')]}/> */}
+          <img className={`${wayarr_green.S.arrows.indexOf('I') > -1 ? 'arrows-s arrows-s-I' : 'arrows-s arrows-s-I  hide'}`}  src={img_arr_green.I}/>
+          <img  className={`${wayarr_green.S.arrows.indexOf('L') > -1 ? 'arrows-s arrows-s-L' : 'arrows-s arrows-s-L  hide'}`} src={img_arr_green.L}/>
+          <img  className={`${wayarr_green.S.arrows.indexOf('R') > -1 ? 'arrows-s arrows-s-R' : 'arrows-s arrows-s-R  hide'}`} src={img_arr_green.R}/>
+          <img  className={`${wayarr_green.S.arrows.indexOf('T') > -1 ? 'arrows-s arrows-s-T' : 'arrows-s arrows-s-T  hide'}`} src={img_arr_green.T}/> 
+            {/* <img  className={'arrows-s'} src={img_arr_green[wayarr.S.arrows.join('')]}/> */}
+          <img className={`${wayarr_green.E.arrows.indexOf('I') > -1 ? 'arrows-e arrows-e-I' : 'arrows-e arrows-e-I  hide'}`}  src={img_arr_green.I}/>
+          <img  className={`${wayarr_green.E.arrows.indexOf('L') > -1 ? 'arrows-e arrows-e-L' : 'arrows-e arrows-e-L  hide'}`} src={img_arr_green.L}/>
+          <img  className={`${wayarr_green.E.arrows.indexOf('R') > -1 ? 'arrows-e arrows-e-R' : 'arrows-e arrows-e-R  hide'}`} src={img_arr_green.R}/>
+          <img  className={`${wayarr_green.E.arrows.indexOf('T') > -1 ? 'arrows-e arrows-e-T' : 'arrows-e arrows-e-T  hide'}`} src={img_arr_green.T}/> 
+            {/* <img  className={'arrows-e'} src={img_arr_green[wayarr.E.arrows.join('')]}/> */}
+          <img className={`${wayarr_green.W.arrows.indexOf('I') > -1 ? 'arrows-w arrows-w-I' : 'arrows-w arrows-w-I  hide'}`}  src={img_arr_green.I}/>
+          <img  className={`${wayarr_green.W.arrows.indexOf('L') > -1 ? 'arrows-w arrows-w-L' : 'arrows-w arrows-w-L  hide'}`} src={img_arr_green.L}/>
+          <img  className={`${wayarr_green.W.arrows.indexOf('R') > -1 ? 'arrows-w arrows-w-R' : 'arrows-w arrows-w-R  hide'}`} src={img_arr_green.R}/>
+          <img  className={`${wayarr_green.W.arrows.indexOf('T') > -1 ? 'arrows-w arrows-w-T' : 'arrows-w arrows-w-T  hide'}`} src={img_arr_green.T}/> 
+            {/* <img  className={'arrows-w'} src={img_arr_green[wayarr.W.arrows.join('')]}/> */}
+            <img  className={'people-n-p'} src={img_arr_green[wayarr_green.N.people.join('')]}/>
+            <img  className={'people-s-p'} src={img_arr_green[wayarr_green.S.people.join('')]}/>
+            <img  className={'people-w-p'} src={img_arr_green[wayarr_green.W.people.join('')]}/>
+            <img  className={'people-e-p'} src={img_arr_green[wayarr_green.E.people.join('')]}/>
+
+
+            <img className={`${wayarr_yellow.N.arrows.indexOf('I') > -1 ? 'arrows-n arrows-n-I' : 'arrows-n arrows-n-I  hide'}`}  src={img_arr_yellow.I}/>
+          <img  className={`${wayarr_yellow.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr_yellow.L}/>
+          <img  className={`${wayarr_yellow.N.arrows.indexOf('R') > -1 ? 'arrows-n arrows-n-R' : 'arrows-n arrows-n-R  hide'}`} src={img_arr_yellow.R}/>
+          <img  className={`${wayarr_yellow.N.arrows.indexOf('T') > -1 ? 'arrows-n arrows-n-T' : 'arrows-n arrows-n-T  hide'}`} src={img_arr_yellow.T}/> 
+           {/*  <img  className={'arrows-n'} src={img_arr_yellow[wayarr.N.arrows.join('')]}/> */}
+          <img className={`${wayarr_yellow.S.arrows.indexOf('I') > -1 ? 'arrows-s arrows-s-I' : 'arrows-s arrows-s-I  hide'}`}  src={img_arr_yellow.I}/>
+          <img  className={`${wayarr_yellow.S.arrows.indexOf('L') > -1 ? 'arrows-s arrows-s-L' : 'arrows-s arrows-s-L  hide'}`} src={img_arr_yellow.L}/>
+          <img  className={`${wayarr_yellow.S.arrows.indexOf('R') > -1 ? 'arrows-s arrows-s-R' : 'arrows-s arrows-s-R  hide'}`} src={img_arr_yellow.R}/>
+          <img  className={`${wayarr_yellow.S.arrows.indexOf('T') > -1 ? 'arrows-s arrows-s-T' : 'arrows-s arrows-s-T  hide'}`} src={img_arr_yellow.T}/> 
+            {/* <img  className={'arrows-s'} src={img_arr_yellow[wayarr.S.arrows.join('')]}/> */}
+          <img className={`${wayarr_yellow.E.arrows.indexOf('I') > -1 ? 'arrows-e arrows-e-I' : 'arrows-e arrows-e-I  hide'}`}  src={img_arr_yellow.I}/>
+          <img  className={`${wayarr_yellow.E.arrows.indexOf('L') > -1 ? 'arrows-e arrows-e-L' : 'arrows-e arrows-e-L  hide'}`} src={img_arr_yellow.L}/>
+          <img  className={`${wayarr_yellow.E.arrows.indexOf('R') > -1 ? 'arrows-e arrows-e-R' : 'arrows-e arrows-e-R  hide'}`} src={img_arr_yellow.R}/>
+          <img  className={`${wayarr_yellow.E.arrows.indexOf('T') > -1 ? 'arrows-e arrows-e-T' : 'arrows-e arrows-e-T  hide'}`} src={img_arr_yellow.T}/> 
+            {/* <img  className={'arrows-e'} src={img_arr_yellow[wayarr.E.arrows.join('')]}/> */}
+          <img className={`${wayarr_yellow.W.arrows.indexOf('I') > -1 ? 'arrows-w arrows-w-I' : 'arrows-w arrows-w-I  hide'}`}  src={img_arr_yellow.I}/>
+          <img  className={`${wayarr_yellow.W.arrows.indexOf('L') > -1 ? 'arrows-w arrows-w-L' : 'arrows-w arrows-w-L  hide'}`} src={img_arr_yellow.L}/>
+          <img  className={`${wayarr_yellow.W.arrows.indexOf('R') > -1 ? 'arrows-w arrows-w-R' : 'arrows-w arrows-w-R  hide'}`} src={img_arr_yellow.R}/>
+          <img  className={`${wayarr_yellow.W.arrows.indexOf('T') > -1 ? 'arrows-w arrows-w-T' : 'arrows-w arrows-w-T  hide'}`} src={img_arr_yellow.T}/> 
+            {/* <img  className={'arrows-w'} src={img_arr_yellow[wayarr.W.arrows.join('')]}/> */}
+            <img  className={'people-n-p'} src={img_arr_yellow[wayarr_yellow.N.people.join('')]}/>
+            <img  className={'people-s-p'} src={img_arr_yellow[wayarr_yellow.S.people.join('')]}/>
+            <img  className={'people-w-p'} src={img_arr_yellow[wayarr_yellow.W.people.join('')]}/>
+            <img  className={'people-e-p'} src={img_arr_yellow[wayarr_yellow.E.people.join('')]}/>
           </div>
           
         </div>
@@ -188,13 +273,28 @@ class Trafficflash extends React.Component {
         newarr[index] = []
         if(regexArrows.exec(stationItem)){ newarr[index].arrows = setArrows(regexArrows.exec(stationItem)[0]); }
         if(regexPeople.exec(stationItem)){newarr[index].people = setPeople(regexPeople.exec(stationItem)[0]);}
-        if(regexDerection.exec(stationItem)){newarr[index].derection = setDerection(regexDerection.exec(stationItem)[0]);}
-        newarr[index].color = key
+        if(regexDerection.exec(stationItem)){newarr[index].derection = setDerection(regexDerection.exec(stationItem)[0]);}      
         console.log(newarr)
+        let wayarr = this.editWayarr(newarr)
+        if(key=='red'){
+          this.setState({
+            wayarr_red:wayarr
+          })
+        }else if(key=='yellow'){
+          this.setState({
+            wayarr_yellow:wayarr
+          })
+        }else if(key=='green'){
+          this.setState({
+            wayarr_green:wayarr
+          })
+            
+        }
+        
       })
     })
 
-    this.editWayarr(newarr)
+   
   }
 
   editWayarr = (newarr) => {
@@ -224,11 +324,8 @@ class Trafficflash extends React.Component {
       wayarr[x].arrows.sort()
       wayarr[x].people.sort()
     })
-     this.setState({
-      wayarr
-    },()=>{
-      console.log(this.state.wayarr)
-    }) 
+    return wayarr
+    
   }
   
   

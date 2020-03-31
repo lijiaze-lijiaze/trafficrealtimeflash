@@ -117,7 +117,7 @@ class Trafficflashfather extends React.Component {
     const{station,colorstation}=this.state
     console.log(`selected ${value}`);
     station.push(value);
-    colorstation.red.push(value);
+    colorstation.yellow.push(value);
     this.setState({
       station,
       colorstation
