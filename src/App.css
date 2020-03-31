@@ -43,6 +43,9 @@
   transform: rotate(180deg);
 }
 
+.arrows-n svg path{
+	fill:red;
+}
 .arrows-n-I{
  left:10%;
  
@@ -54,7 +57,7 @@ left:20%;
 }
 
 .arrows-n-R{
-left:0%;
+left:2%;
  
 }
 
@@ -63,17 +66,71 @@ left:30%;
 }
 
 .arrows-s{
-  position:absolute;bottom:12%;right:15%;width:30%;
+  position:absolute;bottom:12%;right:15%;width:23%;
   transform: rotate(0deg);
 }
+.arrows-s-I{
+  right:11%;
+  
+ }
+ 
+ .arrows-s-L{
+  right:19%;
+  
+ }
+ 
+ .arrows-s-R{
+  right:2%;
+  
+ }
+ 
+ .arrows-s-T{
+  right:29%;
+ }
 .arrows-e{
-  position:absolute;top:12%;right:14%;width:30%;
+  position:absolute;top:12%;right:14%;width:23%;
   transform: rotate(270deg);
 }
+ .arrows-e-I{
+  top:12%;
+  
+ }
+ 
+ .arrows-e-L{
+  top:20%;
+  
+ }
+ 
+ .arrows-e-R{
+  top:3%;
+  
+ }
+ 
+ .arrows-e-T{
+  top:30%;
+ } 
 .arrows-w{
-  position:absolute;bottom:12%;left:14%;width:30%;
+  position:absolute;bottom:12%;left:14%;width:23%;
   transform: rotate(90deg);
 }
+ .arrows-w-I{
+  bottom:10%;
+  
+ }
+ 
+ .arrows-w-L{
+  bottom:19%;
+  
+ }
+ 
+ .arrows-w-R{
+  bottom:1%;
+  
+ }
+ 
+ .arrows-w-T{
+  bottom:29%;
+ } 
 .people-n-p{
   position:absolute;bottom:6%;left:-38%;width:90%;
   transform: rotate(180deg);

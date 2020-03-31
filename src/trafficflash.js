@@ -30,10 +30,10 @@ class Trafficflash extends React.Component {
       },
       newarr: [],
       wayarr: {
-        N: {arrows:['R'],people:['']},
-        S: {arrows:['R'],people:['']},
-        W: {arrows:['I','L','R'],people:['']},
-        E: {arrows:['I'],people:['']},
+        N: {arrows:['I','L','R','T'],people:['P']},
+        S: {arrows:['I','L','R','T'],people:['P']},
+        W: {arrows:['I','L','R','T'],people:['P']},
+        E: {arrows:['I','L','R','T'],people:['P']},
         NE:{arrows:[],people:['']},
         SE:{arrows:[],people:['P']},
         SW:{arrows:['L','R'],people:['']},
@@ -53,7 +53,7 @@ class Trafficflash extends React.Component {
 
   }
   componentDidMount() {
-
+   
   }
   render() {
     const { colorstation,wayarr,multiway } = this.state
@@ -89,13 +89,25 @@ class Trafficflash extends React.Component {
           {colorstation.toString()}
           <div style={{width:'300px',height:'300px',border:'2px solid #fff',position:'fixed',top:'26%',left:'40%',overflow:'hidden'}}>
           <img className={`${wayarr.N.arrows.indexOf('I') > -1 ? 'arrows-n arrows-n-I' : 'arrows-n arrows-n-I  hide'}`}  src={img_arr.I}/>
-           <img  className={`${wayarr.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr.L}/>
+          <img  className={`${wayarr.N.arrows.indexOf('L') > -1 ? 'arrows-n arrows-n-L' : 'arrows-n arrows-n-L  hide'}`} src={img_arr.L}/>
           <img  className={`${wayarr.N.arrows.indexOf('R') > -1 ? 'arrows-n arrows-n-R' : 'arrows-n arrows-n-R  hide'}`} src={img_arr.R}/>
           <img  className={`${wayarr.N.arrows.indexOf('T') > -1 ? 'arrows-n arrows-n-T' : 'arrows-n arrows-n-T  hide'}`} src={img_arr.T}/> 
            {/*  <img  className={'arrows-n'} src={img_arr[wayarr.N.arrows.join('')]}/> */}
-            <img  className={'arrows-s'} src={img_arr[wayarr.S.arrows.join('')]}/>
-            <img  className={'arrows-e'} src={img_arr[wayarr.E.arrows.join('')]}/>
-            <img  className={'arrows-w'} src={img_arr[wayarr.W.arrows.join('')]}/>
+          <img className={`${wayarr.S.arrows.indexOf('I') > -1 ? 'arrows-s arrows-s-I' : 'arrows-s arrows-s-I  hide'}`}  src={img_arr.I}/>
+          <img  className={`${wayarr.S.arrows.indexOf('L') > -1 ? 'arrows-s arrows-s-L' : 'arrows-s arrows-s-L  hide'}`} src={img_arr.L}/>
+          <img  className={`${wayarr.S.arrows.indexOf('R') > -1 ? 'arrows-s arrows-s-R' : 'arrows-s arrows-s-R  hide'}`} src={img_arr.R}/>
+          <img  className={`${wayarr.S.arrows.indexOf('T') > -1 ? 'arrows-s arrows-s-T' : 'arrows-s arrows-s-T  hide'}`} src={img_arr.T}/> 
+            {/* <img  className={'arrows-s'} src={img_arr[wayarr.S.arrows.join('')]}/> */}
+          <img className={`${wayarr.E.arrows.indexOf('I') > -1 ? 'arrows-e arrows-e-I' : 'arrows-e arrows-e-I  hide'}`}  src={img_arr.I}/>
+          <img  className={`${wayarr.E.arrows.indexOf('L') > -1 ? 'arrows-e arrows-e-L' : 'arrows-e arrows-e-L  hide'}`} src={img_arr.L}/>
+          <img  className={`${wayarr.E.arrows.indexOf('R') > -1 ? 'arrows-e arrows-e-R' : 'arrows-e arrows-e-R  hide'}`} src={img_arr.R}/>
+          <img  className={`${wayarr.E.arrows.indexOf('T') > -1 ? 'arrows-e arrows-e-T' : 'arrows-e arrows-e-T  hide'}`} src={img_arr.T}/> 
+            {/* <img  className={'arrows-e'} src={img_arr[wayarr.E.arrows.join('')]}/> */}
+          <img className={`${wayarr.W.arrows.indexOf('I') > -1 ? 'arrows-w arrows-w-I' : 'arrows-w arrows-w-I  hide'}`}  src={img_arr.I}/>
+          <img  className={`${wayarr.W.arrows.indexOf('L') > -1 ? 'arrows-w arrows-w-L' : 'arrows-w arrows-w-L  hide'}`} src={img_arr.L}/>
+          <img  className={`${wayarr.W.arrows.indexOf('R') > -1 ? 'arrows-w arrows-w-R' : 'arrows-w arrows-w-R  hide'}`} src={img_arr.R}/>
+          <img  className={`${wayarr.W.arrows.indexOf('T') > -1 ? 'arrows-w arrows-w-T' : 'arrows-w arrows-w-T  hide'}`} src={img_arr.T}/> 
+            {/* <img  className={'arrows-w'} src={img_arr[wayarr.W.arrows.join('')]}/> */}
             <img  className={'people-n-p'} src={img_arr[wayarr.N.people.join('')]}/>
             <img  className={'people-s-p'} src={img_arr[wayarr.S.people.join('')]}/>
             <img  className={'people-w-p'} src={img_arr[wayarr.W.people.join('')]}/>
