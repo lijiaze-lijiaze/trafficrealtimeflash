@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #79879c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,168 @@
   to {
     transform: rotate(360deg);
   }
+}
+.arrows-n{
+  position:absolute;top:12%;left:15%;width:23%;
+  transform: rotate(180deg);
+}
+
+.arrows-n-I{
+ left:10%;
+ 
+}
+
+.arrows-n-L{
+left:20%;
+ 
+}
+
+.arrows-n-R{
+left:0%;
+ 
+}
+
+.arrows-n-T{
+left:30%;
+}
+
+.arrows-s{
+  position:absolute;bottom:12%;right:15%;width:30%;
+  transform: rotate(0deg);
+}
+.arrows-e{
+  position:absolute;top:12%;right:14%;width:30%;
+  transform: rotate(270deg);
+}
+.arrows-w{
+  position:absolute;bottom:12%;left:14%;width:30%;
+  transform: rotate(90deg);
+}
+.people-n-p{
+  position:absolute;bottom:6%;left:-38%;width:90%;
+  transform: rotate(180deg);
+}
+
+.people-s-p{
+  position:absolute;bottom:6%;right:-38%;width:90%;
+  transform: rotate(0deg);
+}
+.people-w-p{
+  position:absolute;bottom:-39%;right:4%;width:90%;
+  transform: rotate(90deg);
+}
+.people-e-p{
+  position:absolute;top:-39%;right:6%;width:90%;
+  transform: rotate(270deg);
+}
+
+
+
+.mu-arrows-n{
+  position:absolute;top:12%;left:40%;width:20%;
+  transform: rotate(180deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-s{
+  position:absolute;bottom:12%;right:40%;width:20%;
+  transform: rotate(0deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-e{
+  position:absolute;top:40%;right:14%;width:20%;
+  transform: rotate(270deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-w{
+  position:absolute;bottom:40%;left:14%;width:20%;
+  transform: rotate(90deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+
+
+.mu-arrows-ne{
+  position:absolute;top:16%;left:66%;width:20%;
+  transform: rotate(225deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-se{
+  position:absolute;bottom:14%;right:14%;width:20%;
+  transform: rotate(315deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-sw{
+  position:absolute;top:66%;right:66%;width:20%;
+  transform: rotate(45deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-arrows-nw{
+  position:absolute;bottom:63%;left:14%;width:20%;
+  transform: rotate(135deg);
+  border-left: 1px dashed #bba2a2;
+  border-right: 1px dashed #bba2a2;
+  
+}
+.mu-people-n-p{
+  position:absolute;bottom:26%;left:-17%;width:45%;
+  transform: rotate(180deg);
+  
+}
+
+.mu-people-s-p{
+  position:absolute;bottom:26%;right:-18%;width:45%;
+  transform: rotate(0deg);
+  
+}
+.mu-people-w-p{
+  position:absolute;bottom:-19%;right:27%;width:45%;
+  transform: rotate(90deg);
+  
+}
+.mu-people-e-p{
+  position:absolute;top:-16%;right:27%;width:45%;
+  transform: rotate(270deg);
+  
+}
+
+
+.mu-people-ne-p{
+  position:absolute;bottom:67%;left:68%;width:30%;
+  transform: rotate(135deg);
+  
+}
+
+.mu-people-se-p{
+  position:absolute;bottom:0%;right:0%;width:30%;
+  transform: rotate(225deg);
+  
+}
+.mu-people-sw-p{
+  position:absolute;bottom:-1%;right:69%;width:30%;
+  transform: rotate(135deg);
+  
+}
+.mu-people-nw-p{
+  position:absolute;top:3%;right:68%;width:30%;
+  transform: rotate(45deg);
+  
+}
+.show{
+  display: block
+}
+.hide{
+  display: none
 }
