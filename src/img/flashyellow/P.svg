@@ -1,0 +1,21 @@
+<svg width="200" height="201" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="203" width="202" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_50">
+   <path stroke="null" id="svg_49" d="m93.146096,25.42558l14.707805,0l-7.353903,-16.546281l-7.353903,16.546281zm0,149.835769l7.353903,16.546281l7.353903,-16.546281l-14.707805,0zm3.676951,-14.707806l7.353903,0l0,-13.209448l-7.353903,0l0,13.209448zm0,-103.873877l7.353903,0l0,-15.047924l-7.353903,0l0,15.047924zm0,52.396557l7.353903,0l0,-14.128686l-7.353903,0l0,14.128686zm0,26.657898l7.353903,0l0,-15.047924l-7.353903,0l0,15.047924zm0,-52.396557l7.353903,0l0,-15.047924l-7.353903,0l0,15.047924z" fill="#fff001">
+   <animate id='ani1' attributeName='fill-opacity'  attributeType='XML' begin='0s;ani2.end' dur='0.5s' from='1' to='0' fill='freeze'/>
+   <animate id='ani2' attributeName='fill-opacity'  attributeType='XML' begin='ani1.end' dur='0.5s' from='0' to='1' fill='freeze'/> 
+   
+   </path>
+  </g>
+ </g>
+</svg>
